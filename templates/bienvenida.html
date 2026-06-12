@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conecta y Aprende</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="burbujas">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<div class="card">
+
+    <div class="container">
+
+        <h1>Conecta y Aprende</h1>
+
+        <p style="text-align:center; margin-bottom:20px;">
+            Plataforma educativa para la prevención de adicciones y el desarrollo de habilidades.
+        </p>
+
+        <!-- Logo -->
+        <div style="text-align:center;">
+            <img src="{{ url_for('static', filename='img/logo.png') }}"
+                 alt="Logo Conecta y Aprende"
+                 width="300">
+        </div>
+
+        <br>
+
+        <div style="text-align:center;">
+            <a href="/login" class="btn-link">
+                Comenzar
+            </a>
+        </div>
+
+    </div>
+
+
+</div>
+</body>
+</html>

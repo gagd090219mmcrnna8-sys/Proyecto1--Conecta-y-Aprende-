@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Agregar Curso</title>
+    <link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="burbujas">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>    
+
+<div class="card">
+
+<h1>Nuevo Curso</h1>
+
+<form method="POST">
+
+    <input type="text"
+           name="nombre"
+           placeholder="Nombre del curso"
+           required>
+
+    <br><br>
+
+    <textarea name="descripcion"></textarea>
+
+    <br><br>
+
+    <button type="submit" class="btn-link">
+        Guardar
+    </button>
+
+</form>
+
+<br>
+
+<a href="/cursos" class="btn-link">
+    Regresar
+</a>
+</div>
+</body>
+</html>

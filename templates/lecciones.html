@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lecciones</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="burbujas">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<div class="card">   
+
+<h1>Lecciones</h1>
+{% if session["rol"] == "admin" %}
+
+<a href="/agregar_leccion" class="btn-link">
+    Agregar Lección
+</a>
+
+{% endif %}
+
+<hr>
+
+{% for leccion in lecciones %}
+
+<h3>{{ leccion.titulo }}</h3>
+
+<p>{{ leccion.contenido }}</p>
+
+<img
+src="{{ url_for('static', filename='uploads/imagenes/' + leccion.imagen) }}"
+width="300">
+
+<br><br>
+
+<video width="400" controls>
+
+    <source
+    src="{{ url_for('static', filename='uploads/videos/' + leccion.video) }}">
+
+</video>
+
+<hr>
+
+{% endfor %}
+
+<a href="/usuario" class="btn-link">
+    Regresar
+</a>
+
+</div>
+</body>
+</html>

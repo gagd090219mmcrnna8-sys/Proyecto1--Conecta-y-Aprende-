@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulos</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="burbujas">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<div class="card">
+
+<div class="container">
+
+    <h1>Gestión de Módulos</h1>
+
+    {% if session["rol"] == "admin" %}
+    <a href="/agregar_modulo" class="btn-link">
+        <button>Agregar Módulo</button>
+    </a>
+    {% endif %}
+
+    <hr><br>
+
+    {% for modulo in modulos %}
+
+    <div class="card">
+
+        <h3>Módulo {{ modulo.numero }}</h3>
+
+        <p>{{ modulo.nombre }}</p>
+
+        <a href="/lecciones" class="btn-link">
+            Ver Lecciones
+        </a>
+
+    </div>
+
+    {% endfor %}
+
+    <br>
+
+    {% if session["rol"] == "admin" %}
+        <a href="/admin" class="btn-link">
+            Regresar</a>
+    {% else %}
+        <a href="/usuario" class="btn-link">
+            Regresar</a>
+    {% endif %}
+
+</div>
+
+</div>
+</body>
+</html>

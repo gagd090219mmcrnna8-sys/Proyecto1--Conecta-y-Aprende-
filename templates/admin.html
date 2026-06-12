@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Administrador</title>
+    <link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="burbujas">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+
+<div class="card">
+<h1>Panel Administrador</h1>
+<p>Bienvenido Administrador</p>
+
+<a href="/usuarios" class="btn-link">
+    Gestionar Usuarios
+</a>
+
+<a href="/cursos" class="btn-link">
+    Gestionar Cursos
+</a>
+
+<a href="/modulos" class="btn-link">
+    Gestionar Módulos
+</a>
+
+<a href="/lecciones" class="btn-link">
+    Gestionar Lecciones
+</a>
+
+<a href="/examenes" class="btn-link">
+    Gestionar Exámenes
+</a>
+
+<a href="/logout"
+   class="btn-link logout-btn">
+   Cerrar Sesión
+</a>
+
+</div>
+</body>
+</html>

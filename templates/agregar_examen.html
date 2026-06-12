@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Examen</title>
+    <link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="burbujas">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<div class="card">
+<h1>Nueva Pregunta</h1>
+
+<form method="POST">
+
+    <label>Módulo</label>
+    <br>
+
+    <input
+        type="number"
+        name="modulo"
+        required>
+
+    <br><br>
+
+    <label>Pregunta</label>
+    <br>
+
+    <input
+        type="text"
+        name="pregunta"
+        required>
+
+    <br><br>
+
+    <label>Opción 1</label>
+    <br>
+
+    <input
+        type="text"
+        name="opcion1"
+        required>
+
+    <br><br>
+
+    <label>Opción 2</label>
+    <br>
+
+    <input
+        type="text"
+        name="opcion2"
+        required>
+
+    <br><br>
+
+    <label>Opción 3</label>
+    <br>
+
+    <input
+        type="text"
+        name="opcion3"
+        required>
+
+    <br><br>
+
+    <label>Opción 4</label>
+    <br>
+
+    <input
+        type="text"
+        name="opcion4"
+        required>
+
+    <br><br>
+
+    <label>Respuesta Correcta</label>
+    <br>
+
+    <input
+        type="text"
+        name="correcta"
+        required>
+
+    <br><br>
+
+    <button type="submit">
+        Guardar Pregunta
+    </button>
+
+</form>
+
+<br>
+
+<a href="/examenes">
+    Regresar
+</a>
+</div>
+</body>
+</html>

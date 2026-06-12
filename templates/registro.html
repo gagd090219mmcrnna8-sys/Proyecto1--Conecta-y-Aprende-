@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="burbujas">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<div class="card">
+
+<h1>Crear Cuenta</h1>
+
+<form method="POST">
+
+    <input type="text"
+           name="nombre"
+           placeholder="Nombre"
+           required>
+
+    <br><br>
+
+    <input type="email"
+           name="correo"
+           placeholder="Correo"
+           required>
+
+    <br><br>
+
+    <input type="password"
+           name="password"
+           placeholder="Contraseña"
+           required>
+
+    <br><br>
+
+    <button type="submit">
+        Registrarse
+    </button>
+
+</form>
+
+<br>
+
+<a href="/login" class="btn-link">
+    Volver al Login
+</a>
+
+
+</div>
+</body>
+</html>
+</html>

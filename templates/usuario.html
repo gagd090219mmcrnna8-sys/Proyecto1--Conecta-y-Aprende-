@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Usuario</title>
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="burbujas">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+<div class="card">
+
+<h1>Bienvenido {{ nombre }}</h1>
+
+<p>Bienvenido a Conecta y Aprende</p>
+
+
+
+ <div style="text-align:center;">
+            <img src="{{ url_for('static', filename='img/logo.png') }}"
+                 alt="Logo Conecta y Aprende"
+                 width="500">
+        </div>
+{% if session["rol"] == "admin" %}
+<a href="/logout" class="btn-link logout-btn">
+    Cerrar Sesión
+</a>
+{% endif %}
+
+{% if session["rol"] == "usuario" %}
+<a href="/modulos" class="btn-link" > 
+    Comenzar Curso
+</a>
+{% endif %}
+
+<br><br>
+
+{% if session["rol"] == "usuario" %}
+<a href="/progreso" class="btn-link">
+    Ver Mi Progreso
+</a>
+{% endif %}
+
+<br><br>
+
+{% if progreso == 100 %}
+<a href="/certificado" class="btn-link">
+    Descargar Certificado
+</a>
+{% endif %}
+
+<br><br>
+
+{% if session["rol"] == "usuario" %}
+<a href="/logout" class="btn-link logout-btn">
+    Cerrar Sesión
+</a>
+{% endif %}
+
+</div>
+</body>
+</html>
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Exámenes</title>
+    <link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="burbujas">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<div class="card">
+
+<h1>Gestión de Exámenes</h1>
+
+{% if session["rol"] == "admin" %}
+<a href="/agregar_examen" class="btn-link">
+    Agregar Examen
+</a>
+{% endif %}
+
+<hr>
+
+{% for examen in examenes %}
+
+    <h3>Módulo {{ examen.modulo }}</h3>
+
+    <p>
+        {{ examen.pregunta }}
+    </p>
+
+    <ul>
+
+        {% for opcion in examen.opciones %}
+
+            <li>{{ opcion }}</li>
+
+        {% endfor %}
+
+    </ul>
+
+    <p>
+        Respuesta correcta:
+        {{ examen.correcta }}
+    </p>
+
+    <hr>
+
+{% endfor %}
+
+<a href="/admin" class="btn-link">
+    Regresar
+</a>
+
+</div>
+</body>
+</html>
